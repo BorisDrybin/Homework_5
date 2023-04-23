@@ -61,22 +61,27 @@ Console.WriteLine("Введите размер массива");
 
 int[] arr = new int[Convert.ToInt32(Console.ReadLine())];
 
+int i = 0;
+int sum = 0;
+
+for (i = 0; i < arr.Length; i++)
+{
+    arr[i] = new Random().Next(0, 100);
+}
+
 int max = arr[0];
 int min = arr[0];
 
-int sum = 0;
-
-for (int i = 0; i < arr.Length; i++)
+for (i = 1; i < arr.Length; i++)
 {
-    arr[i] = new Random().Next(-100, 101);
-
-    if (arr[i] <= min)
-    {
-        min = arr[i];
-    }
-    else if (arr[i] >= max)
+    if (arr[i] > max)
     {
         max = arr[i];
+    }
+
+    if (arr[i] < min)
+    {
+        min = arr[i];
     }
 }
 
